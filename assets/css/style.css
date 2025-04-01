@@ -1,0 +1,160 @@
+/* assets/css/style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ffcc00;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+}
+
+/* ゲームログ */
+#game-log {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+/* バトルフィールド */
+#battle-field {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #eee;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pokemon {
+  width: 200px;
+  height: 300px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* 手札のスタイル */
+.hand {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* カードのデザイン */
+.card {
+  width: 120px;
+  height: 180px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.1) rotateY(15deg);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card .card-front,
+.card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.card .card-front {
+  background-color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card .card-back {
+  background-color: #f0f0f0;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #333;
+}
+
+/* エネルギー・デッキのステータス */
+#energy-status, #deck-status {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* アニメーション */
+.animation {
+  font-size: 30px;
+  animation: explode 1s ease-in-out;
+}
+
+@keyframes explode {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* カード詳細表示 */
+#card-details {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  width: 60%;
+  margin: auto;
+  display: none;
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .card {
+    width: 100px;
+    height: 150px;
+  }
+  #card-details {
+    width: 90%;
+  }
+}
