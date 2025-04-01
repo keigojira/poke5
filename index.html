@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポケモンカードゲーム</title>
+  <!-- CSSファイルのパスを相対パスで指定 -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>ポケモンカードゲーム</h1>
+  </header>
+
+  <main>
+    <div id="game-log"></div>
+    <div id="battle-field">
+      <div id="player-pokemon" class="pokemon">
+        <p>あなたのポケモン</p>
+      </div>
+      <div id="opponent-pokemon" class="pokemon">
+        <p>相手のポケモン</p>
+      </div>
+    </div>
+    <div id="player-hand" class="hand"></div>
+    <div id="opponent-hand" class="hand"></div>
+    <div id="energy-status">
+      <p>あなたのエネルギー: <span id="player-energy">3</span></p>
+      <p>相手のエネルギー: <span id="opponent-energy">3</span></p>
+    </div>
+    <div id="deck-status">
+      <p>あなたのデッキ: <span id="player-deck-count">30</span>枚</p>
+      <p>相手のデッキ: <span id="opponent-deck-count">30</span>枚</p>
+    </div>
+    <div id="card-details"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ポケモンカードゲーム</p>
+  </footer>
+
+  <!-- JavaScriptファイルも相対パスで指定 -->
+  <script src="script.js"></script>
+</body>
+</html>
